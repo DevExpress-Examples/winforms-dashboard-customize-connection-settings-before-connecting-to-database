@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-US">
+  <Title Text="Dashboard" />
+  <DataConnections>
+    <DataConnection Name="nwindConnection" ProviderKey="Access97" ConnectionString="XpoProvider=MSAccess;Provider=Microsoft.Jet.OLEDB.4.0;Mode=Share Deny None;data source=..\..\Data\nwind.mdb;User Id=;Password=;">
+      <Parameters>
+        <Parameter Name="database" Value="..\..\Data\nwind.mdb" />
+        <Parameter Name="read only" Value="1" />
+        <Parameter Name="generateConnectionHelper" Value="false" />
+      </Parameters>
+    </DataConnection>
+  </DataConnections>
+  <DataSources>
+    <DataSource Name="Data Source 1">
+      <DataProvider DataConnection="nwindConnection" SupportSql="true">
+        <Selection>
+          <Table Name="SalesPerson">
+            <Columns>
+              <Column Name="CategoryName" />
+              <Column Name="Country" />
+              <Column Name="Discount" />
+              <Column Name="Extended Price" />
+              <Column Name="FirstName" />
+              <Column Name="LastName" />
+              <Column Name="OrderDate" />
+              <Column Name="OrderID" />
+              <Column Name="ProductName" />
+              <Column Name="Quantity" />
+              <Column Name="Sales Person" />
+              <Column Name="UnitPrice" />
+            </Columns>
+          </Table>
+        </Selection>
+      </DataProvider>
+    </DataSource>
+  </DataSources>
+  <Items>
+    <Pivot UniqueName="Pivot 1" DataSource="Data Source 1">
+      <DataItems>
+        <Measure DataMember="SalesPerson.Extended Price" UniqueName="DataItem0" />
+        <Measure DataMember="SalesPerson.Quantity" UniqueName="DataItem1" />
+        <Dimension DataMember="SalesPerson.CategoryName" UniqueName="DataItem2" />
+        <Dimension DataMember="SalesPerson.Country" UniqueName="DataItem3" />
+      </DataItems>
+      <Columns>
+        <Column UniqueName="DataItem3" />
+      </Columns>
+      <Rows>
+        <Row UniqueName="DataItem2" />
+      </Rows>
+      <Values>
+        <Value UniqueName="DataItem0" />
+        <Value UniqueName="DataItem1" />
+      </Values>
+      <AutoExpandColumnGroups>false</AutoExpandColumnGroups>
+      <AutoExpandRowGroups>false</AutoExpandRowGroups>
+    </Pivot>
+    <Pie UniqueName="Pies 1" DataSource="Data Source 1">
+      <DataItems>
+        <Measure DataMember="SalesPerson.Extended Price" UniqueName="DataItem0" />
+        <Dimension DataMember="SalesPerson.Sales Person" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem1" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem0" />
+      </Values>
+    </Pie>
+  </Items>
+  <Layout>
+    <LayoutItem Name="Pivot 1" Left="0" Top="0" Right="0.52173913043478259" Bottom="1" />
+    <LayoutItem Name="Pies 1" Left="0.52173913043478259" Top="0" Right="1" Bottom="1" />
+  </Layout>
+</Dashboard>
