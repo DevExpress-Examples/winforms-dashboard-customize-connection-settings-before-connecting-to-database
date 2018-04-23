@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-US">
+  <Title Text="Dashboard" />
+  <DataConnections>
+    <DataConnection Name="nwindConnection" ProviderKey="Access97">
+      <Parameters>
+        <Parameter Name="database" Value="..\..\Data\nwind.mdb" />
+        <Parameter Name="read only" Value="1" />
+        <Parameter Name="generateConnectionHelper" Value="false" />
+      </Parameters>
+    </DataConnection>
+  </DataConnections>
+  <DataSources>
+    <SqlDataSource ComponentName="dataSource1">
+      <Name>SQL Data Source 1</Name>
+      <Connection Name="nwindConnection" ProviderKey="Access97">
+        <Parameters>
+          <Parameter Name="database" Value="..\..\Data\nwind.mdb" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="Admin" />
+          <Parameter Name="password" Value="password" />
+        </Parameters>
+      </Connection>
+      <Query Type="TableQuery" Name="Data Source 1">
+        <Table Name="SalesPerson">
+          <Column Name="CategoryName" />
+          <Column Name="Country" />
+          <Column Name="Discount" />
+          <Column Name="Extended Price" />
+          <Column Name="FirstName" />
+          <Column Name="LastName" />
+          <Column Name="OrderDate" />
+          <Column Name="OrderID" />
+          <Column Name="ProductName" />
+          <Column Name="Quantity" />
+          <Column Name="Sales Person" />
+          <Column Name="UnitPrice" />
+        </Table>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="Data Source 1">
+          <View Name="Data Source 1">
+            <Field Name="CategoryName" Type="String" />
+            <Field Name="Country" Type="String" />
+            <Field Name="Discount" Type="Single" />
+            <Field Name="Extended Price" Type="Decimal" />
+            <Field Name="FirstName" Type="String" />
+            <Field Name="LastName" Type="String" />
+            <Field Name="OrderDate" Type="DateTime" />
+            <Field Name="OrderID" Type="Int32" />
+            <Field Name="ProductName" Type="String" />
+            <Field Name="Quantity" Type="Int16" />
+            <Field Name="Sales Person" Type="String" />
+            <Field Name="UnitPrice" Type="Decimal" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Chart ComponentName="chartDashboardItem1" Name="Chart 1" ShowCaption="false" DataSource="dataSource1" DataMember="Data Source 1">
+      <DataItems>
+        <Dimension DataMember="OrderDate" Name="OrderDate" DateTimeGroupInterval="MonthYear" UniqueName="DataItem2" />
+        <Measure DataMember="Extended Price" Name="Extended Price" UniqueName="DataItem0" />
+        <Dimension DataMember="Sales Person" UniqueName="DataItem3" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem3" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem2" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple SeriesType="SplineArea">
+              <Value UniqueName="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Pivot ComponentName="pivotDashboardItem1" Name="Pivot 1" ShowCaption="false" DataSource="dataSource1" DataMember="Data Source 1">
+      <DataItems>
+        <Measure DataMember="Extended Price" UniqueName="DataItem0" />
+        <Dimension DataMember="CategoryName" UniqueName="DataItem1" />
+        <Dimension DataMember="ProductName" UniqueName="DataItem2" />
+        <Dimension DataMember="Country" UniqueName="DataItem3" />
+        <Dimension DataMember="OrderDate" UniqueName="DataItem4" />
+      </DataItems>
+      <Columns>
+        <Column UniqueName="DataItem3" />
+        <Column UniqueName="DataItem4" />
+      </Columns>
+      <Rows>
+        <Row UniqueName="DataItem1" />
+        <Row UniqueName="DataItem2" />
+      </Rows>
+      <Values>
+        <Value UniqueName="DataItem0" />
+      </Values>
+      <AutoExpandColumnGroups>true</AutoExpandColumnGroups>
+    </Pivot>
+    <ListBox ComponentName="listBoxDashboardItem1" Name="Sales Person" Group="dashboardItemGroup1" DataSource="dataSource1" DataMember="Data Source 1" ShowAllValue="false" ListBoxType="Radio">
+      <DataItems>
+        <Dimension DataMember="Sales Person" UniqueName="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension UniqueName="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <TreeView ComponentName="treeViewDashboardItem1" Name="Category/Product" Group="dashboardItemGroup1" DataSource="dataSource1" DataMember="Data Source 1">
+      <DataItems>
+        <Dimension DataMember="CategoryName" UniqueName="DataItem0" />
+        <Dimension DataMember="ProductName" UniqueName="DataItem1" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension UniqueName="DataItem0" />
+        <Dimension UniqueName="DataItem1" />
+      </FilterDimensions>
+    </TreeView>
+  </Items>
+  <Groups>
+    <Group ComponentName="dashboardItemGroup1" Name="Filters">
+      <InteractivityOptions IsMasterFilter="true" />
+    </Group>
+  </Groups>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutGroup Orientation="Vertical" DashboardItem="dashboardItemGroup1" Weight="22.048066875653081">
+        <LayoutItem DashboardItem="listBoxDashboardItem1" Weight="47.010309278350519" />
+        <LayoutItem DashboardItem="treeViewDashboardItem1" Weight="52.989690721649481" />
+      </LayoutGroup>
+      <LayoutGroup Orientation="Vertical" Weight="77.951933124346922">
+        <LayoutItem DashboardItem="chartDashboardItem1" Weight="49.906191369606006" />
+        <LayoutItem DashboardItem="pivotDashboardItem1" Weight="50.093808630393994" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
