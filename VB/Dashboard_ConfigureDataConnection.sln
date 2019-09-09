@@ -1,4 +1,4 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
+﻿Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Dashboard_ConfigureDataConnection", "Dashboard_ConfigureDataConnection\Dashboard_ConfigureDataConnection.vbproj", "{432554BC-EDB7-4520-A4A6-A766ADD40CD7}"
 EndProject

@@ -3,34 +3,21 @@ Imports DevExpress.DashboardCommon
 Imports DevExpress.XtraEditors
 
 Namespace Dashboard_ConfigureDataConnection
-    Partial Public Class Form1
-        Inherits XtraForm
+	Partial Public Class Form1
+		Inherits XtraForm
 
-        Public Sub New()
-            InitializeComponent()
+		Public Sub New()
+			InitializeComponent()
+			AddHandler dashboardViewer1.ConfigureDataConnection, AddressOf dashboardViewer1_ConfigureDataConnection
+			dashboardViewer1.LoadDashboard("..\..\Data\nwindDashboard.xml")
+		End Sub
 
-            ' Loads a dashboard from an XML file.
-            dashboardViewer1.LoadDashboard("..\..\Data\nwindDashboard.xml")
-        End Sub
-
-        ' Handles the ConfigureDataConnection event.
-        Private Sub dashboardViewer1_ConfigureDataConnection(ByVal sender As Object, _
-                                     ByVal e As DashboardConfigureDataConnectionEventArgs) _
-                                 Handles dashboardViewer1.ConfigureDataConnection
-
-            ' Checks the name of the connection for which the event has been raised.
-            If e.DataSourceName = "SQL Data Source 1" Then
-
-                ' Gets the connection parameters used to establish a connection to the database.
-                Dim parameters As Access97ConnectionParameters =
-                    CType(e.ConnectionParameters, Access97ConnectionParameters)
-
-                ' Specifies the user name used to access the database file. 
-                parameters.UserName = "Admin"
-
-                ' Specifies the password used to access the database file.
-                parameters.Password = "password"
-            End If
-        End Sub
-    End Class
+		Private Sub dashboardViewer1_ConfigureDataConnection(ByVal sender As Object, ByVal e As DashboardConfigureDataConnectionEventArgs)
+			If e.DataSourceName = "SQL Data Source 1" Then
+				Dim parameters As Access97ConnectionParameters = CType(e.ConnectionParameters, Access97ConnectionParameters)
+				parameters.UserName = "Admin"
+				parameters.Password = "password"
+			End If
+		End Sub
+	End Class
 End Namespace
