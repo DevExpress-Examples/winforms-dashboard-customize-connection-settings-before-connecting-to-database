@@ -9,3 +9,7 @@
 This example demonstrates how to handle the [ConfigureDataConnection](http://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardViewer.ConfigureDataConnection) event to change connection settings and provide a username and a password before the DashboardViewer connects to a Microsoft Access database.
 
 ![](/images/screenshot.png)
+
+## Documentation
+
+- [Providing Data](https://docs.devexpress.com/Dashboard/16914)
