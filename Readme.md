@@ -8,7 +8,7 @@
 
 * [Form1.cs](./CS/Dashboard_ConfigureDataConnection/Form1.cs) (VB: [Form1.vb](./VB/Dashboard_ConfigureDataConnection/Form1.vb))
 <!-- default file list end -->
-# How to Change Connection Settings Before DashboardViewer Connects to a Database
+# Dashboard for WinForms - Change Connection Settings Before DashboardViewer Connects to a Database
 
 
 This example demonstrates how to handle the [ConfigureDataConnection](http://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardViewer.ConfigureDataConnection) event to change connection settings and provide a username and a password before the DashboardViewer connects to a Microsoft Access database.
@@ -18,3 +18,15 @@ This example demonstrates how to handle the [ConfigureDataConnection](http://doc
 ## Documentation
 
 - [Providing Data](https://docs.devexpress.com/Dashboard/16914)
+- [ConfigureDataConnection](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.IDashboardControl.ConfigureDataConnection)
+- [DashboardSqlDataSource](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.DashboardSqlDataSource)
+- [DashboardOlapDataSource](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.DashboardOlapDataSource)
+- [DashboardExcelDataSource](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.DashboardExcelDataSource)
+- [DashboardExtractDataSource](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.DashboardExtractDataSource)
+- [DashboardJsonDataSource](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.DashboardJsonDataSource)
+
+## More Examples
+
+- [Dashboard for WinForms - Define IConnectionStorageService filtering unnecessary connections from app.config](https://github.com/DevExpress-Examples/how-to-define-iconnectionstorageservice-filtering-unnecessary-connections-from-appconfig-t281449)
+- [Dashboard for WinForms - Bind a dashboard to a Microsoft SQL Server database file at runtime](https://github.com/DevExpress-Examples/how-to-bind-dashboard-to-sql-server-database-file)
+
