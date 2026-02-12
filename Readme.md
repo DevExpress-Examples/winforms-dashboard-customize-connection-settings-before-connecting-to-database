@@ -30,7 +30,7 @@ This example demonstrates how to handle the [ConfigureDataConnection](http://doc
 - [Dashboard for WinForms - Bind a dashboard to a Microsoft SQL Server database file at runtime](https://github.com/DevExpress-Examples/how-to-bind-dashboard-to-sql-server-database-file)
 
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-dashboard-customize-connection-settings-before-connecting-to-database&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-dashboard-customize-connection-settings-before-connecting-to-database&~~~was_helpful=no)
 
